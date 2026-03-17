@@ -1,0 +1,53 @@
+Downloading Chromium 125.0.6422.26 (playwright build v1117) from https://playwright.azureedge.net/builds/chromium/1117/chromium-linux.zip
+|                                                                                |   0% of 156.8 MiB
+|■■■■■■■■                                                                        |  10% of 156.8 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 156.8 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 156.8 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 156.8 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 156.8 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 156.8 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 156.8 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 156.8 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 156.8 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 156.8 MiB
+Chromium 125.0.6422.26 (playwright build v1117) downloaded to /app/.cache/ms-playwright/chromium-1117
+Downloading FFMPEG playwright build v1009 from https://playwright.azureedge.net/builds/ffmpeg/1009/ffmpeg-linux.zip
+|                                                                                |   0% of 2.6 MiB
+|■■■■■■■■                                                                        |  10% of 2.6 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 2.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.6 MiB
+FFMPEG playwright build v1009 downloaded to /app/.cache/ms-playwright/ffmpeg-1009
+Playwright Host validation warning: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     sudo playwright install-deps                     ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     sudo apt-get install libatk1.0-0\                ║
+║         libatk-bridge2.0-0\                          ║
+║         libdrm2\                                     ║
+║         libatspi2.0-0\                               ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libgbm1\                                     ║
+║         libxkbcommon0\                               ║
+║         libasound2                                   ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+    at validateDependenciesLinux (/app/.heroku/python/lib/python3.11/site-packages/playwright/driver/package/lib/server/registry/dependencies.js:216:9)
+    at async Registry._validateHostRequirements (/app/.heroku/python/lib/python3.11/site-packages/playwright/driver/package/lib/server/registry/index.js:603:43)
+    at async Registry._validateHostRequirementsForExecutableIfNeeded (/app/.heroku/python/lib/python3.11/site-packages/playwright/driver/package/lib/server/registry/index.js:701:7)
+    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/app/.heroku/python/lib/python3.11/site-packages/playwright/driver/package/lib/server/registry/index.js:690:43)
+    at async t.<anonymous> (/app/.heroku/python/lib/python3.11/site-packages/playwright/driver/package/lib/cli/program.js:119:7)
