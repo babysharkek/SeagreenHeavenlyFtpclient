@@ -12,3 +12,5 @@ libasound2t64
 libcups2
 libnspr4
 libnss3
+libpango-1.0-0
+libcairo2
