@@ -1,7 +1,12 @@
 import asyncio
+import os
 import random
 import sys
 from playwright.async_api import async_playwright
+
+NIX_CHROMIUM = (
+    "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium-browser"
+)
 
 TARGET_URL = "https://replit.com/join/qkyqeujyrv-worldchampion2"
 
@@ -76,21 +81,21 @@ async def main():
     url = sys.argv[1] if len(sys.argv) > 1 else TARGET_URL
 
     async with async_playwright() as pw:
-        chromium_path = (
-            "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium-browser"
-        )
-
-        browser = await pw.chromium.launch(
-            executable_path=chromium_path,
-            headless=True,
-            args=[
+        launch_kwargs = {
+            "headless": True,
+            "args": [
                 "--no-sandbox",
                 "--disable-setuid-sandbox",
                 "--disable-dev-shm-usage",
                 "--disable-gpu",
                 "--single-process",
             ],
-        )
+        }
+
+        if os.path.exists(NIX_CHROMIUM):
+            launch_kwargs["executable_path"] = NIX_CHROMIUM
+
+        browser = await pw.chromium.launch(**launch_kwargs)
 
         context = await browser.new_context(
             viewport={"width": 1280, "height": 800},

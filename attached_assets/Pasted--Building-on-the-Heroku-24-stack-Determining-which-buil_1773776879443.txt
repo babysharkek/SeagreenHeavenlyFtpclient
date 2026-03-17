@@ -1,0 +1,380 @@
+-----> Building on the Heroku-24 stack
+-----> Determining which buildpack to use for this app
+-----> Python app detected
+-----> No Python version was specified. Using the buildpack default: Python 3.14
+ !     Warning: No Python version was specified.
+ !     
+ !     Your app doesn't specify a Python version and so the buildpack
+ !     picked a default version for you.
+ !     
+ !     Relying on this default version isn't recommended, since it
+ !     can change over time and may not be consistent with your local
+ !     development environment, CI or other instances of your app.
+ !     
+ !     Please configure an explicit Python version for your app.
+ !     
+ !     Create a new file in the root directory of your app named:
+ !     .python-version
+ !     
+ !     Make sure to include the '.' character at the start of the
+ !     filename. Don't add a file extension such as '.txt'.
+ !     
+ !     In the new file, specify your app's major Python version number
+ !     only. Don't include quotes or a 'python-' prefix.
+ !     
+ !     For example, to request the latest version of Python 3.14,
+ !     update your .python-version file so it contains exactly:
+ !     3.14
+ !     
+ !     We strongly recommend that you don't specify the Python patch
+ !     version number, since it will pin your app to an exact Python
+ !     version and so stop your app from receiving security updates
+ !     each time it builds.
+ !     
+ !     If your app already has a .python-version file, check that it:
+ !     
+ !     1. Is in the top level directory (not a subdirectory).
+ !     2. Is named exactly '.python-version' in all lowercase.
+ !     3. Isn't listed in '.gitignore' or '.slugignore'.
+ !     4. Has been added to the Git repository using 'git add --all'
+ !        and then committed using 'git commit'.
+ !     
+ !     In the future we will require the use of a .python-version
+ !     file and this warning will be made an error.
+-----> Installing Python 3.14.3
+-----> Installing pip 26.0.1
+-----> Installing dependencies using 'pip install -r requirements.txt'
+       Collecting playwright==1.44.0 (from -r requirements.txt (line 1))
+         Downloading playwright-1.44.0-py3-none-manylinux1_x86_64.whl.metadata (3.5 kB)
+       Collecting greenlet==3.0.3 (from playwright==1.44.0->-r requirements.txt (line 1))
+         Downloading greenlet-3.0.3.tar.gz (182 kB)
+         Installing build dependencies: started
+         Installing build dependencies: finished with status 'done'
+         Getting requirements to build wheel: started
+         Getting requirements to build wheel: finished with status 'done'
+         Preparing metadata (pyproject.toml): started
+         Preparing metadata (pyproject.toml): finished with status 'done'
+       Collecting pyee==11.1.0 (from playwright==1.44.0->-r requirements.txt (line 1))
+         Downloading pyee-11.1.0-py3-none-any.whl.metadata (2.8 kB)
+       Collecting typing-extensions (from pyee==11.1.0->playwright==1.44.0->-r requirements.txt (line 1))
+         Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+       Downloading playwright-1.44.0-py3-none-manylinux1_x86_64.whl (37.8 MB)
+       Downloading pyee-11.1.0-py3-none-any.whl (15 kB)
+       Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+       Building wheels for collected packages: greenlet
+         Building wheel for greenlet (pyproject.toml): started
+         Building wheel for greenlet (pyproject.toml): finished with status 'error'
+         error: subprocess-exited-with-error
+         
+         × Building wheel for greenlet (pyproject.toml) did not run successfully.
+         │ exit code: 1
+         ╰─> [295 lines of output]
+             /tmp/pip-build-env-awfwezh9/overlay/lib/python3.14/site-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+             !!
+             
+                     ********************************************************************************
+                     Please consider removing the following classifiers in favor of a SPDX license expression:
+             
+                     License :: OSI Approved :: MIT License
+             
+                     See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+                     ********************************************************************************
+             
+             !!
+               self._finalize_license_expression()
+             running bdist_wheel
+             running build
+             running build_py
+             creating build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/__init__.py -> build/lib.linux-x86_64-cpython-314/greenlet
+             creating build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/__init__.py -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             creating build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/__init__.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/fail_clearing_run_switches.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/fail_cpp_exception.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/fail_initialstub_already_started.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/fail_slp_switch.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/fail_switch_three_greenlets.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/fail_switch_three_greenlets2.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/fail_switch_two_greenlets.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/leakcheck.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_contextvars.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_cpp.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_extension_interface.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_gc.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_generator.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_generator_nested.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_greenlet.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_greenlet_trash.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_leaks.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_stack_saved.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_throw.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_tracing.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_version.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/test_weakref.py -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             running egg_info
+             writing src/greenlet.egg-info/PKG-INFO
+             writing dependency_links to src/greenlet.egg-info/dependency_links.txt
+             writing requirements to src/greenlet.egg-info/requires.txt
+             writing top-level names to src/greenlet.egg-info/top_level.txt
+             reading manifest file 'src/greenlet.egg-info/SOURCES.txt'
+             reading manifest template 'MANIFEST.in'
+             warning: no previously-included files found matching 'benchmarks/*.json'
+             no previously-included directories found matching 'docs/_build'
+             warning: no files found matching '*.py' under directory 'appveyor'
+             warning: no previously-included files matching '*.pyc' found anywhere in distribution
+             warning: no previously-included files matching '*.pyd' found anywhere in distribution
+             warning: no previously-included files matching '*.so' found anywhere in distribution
+             warning: no previously-included files matching '.coverage' found anywhere in distribution
+             adding license file 'LICENSE'
+             adding license file 'LICENSE.PSF'
+             adding license file 'AUTHORS'
+             writing manifest file 'src/greenlet.egg-info/SOURCES.txt'
+             copying src/greenlet/TBrokenGreenlet.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/TExceptionState.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/TGreenlet.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/TGreenletGlobals.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/TMainGreenlet.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/TPythonState.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/TStackState.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/TThreadStateDestroy.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/TUserGreenlet.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet.cpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet.h -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_allocator.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_compiler_compat.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_cpython_add_pending.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_cpython_compat.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_exceptions.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_greenlet.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_internal.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_refs.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_slp_switch.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_thread_state.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_thread_state_dict_cleanup.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/greenlet_thread_support.hpp -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/slp_platformselect.h -> build/lib.linux-x86_64-cpython-314/greenlet
+             copying src/greenlet/platform/setup_switch_x64_masm.cmd -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_aarch64_gcc.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_alpha_unix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_amd64_unix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_arm32_gcc.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_arm32_ios.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_arm64_masm.asm -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_arm64_masm.obj -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_arm64_msvc.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_csky_gcc.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_loongarch64_linux.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_m68k_gcc.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_mips_unix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_ppc64_aix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_ppc64_linux.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_ppc_aix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_ppc_linux.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_ppc_macosx.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_ppc_unix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_riscv_unix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_s390_unix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_sparc_sun_gcc.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_x32_unix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_x64_masm.asm -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_x64_masm.obj -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_x64_msvc.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_x86_msvc.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/platform/switch_x86_unix.h -> build/lib.linux-x86_64-cpython-314/greenlet/platform
+             copying src/greenlet/tests/_test_extension.c -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             copying src/greenlet/tests/_test_extension_cpp.cpp -> build/lib.linux-x86_64-cpython-314/greenlet/tests
+             running build_ext
+             building 'greenlet._greenlet' extension
+             creating build/temp.linux-x86_64-cpython-314/src/greenlet
+             g++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O3 -Wall -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/tmp/src=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fPIC -I/app/.heroku/python/include/python3.14 -c src/greenlet/greenlet.cpp -o build/temp.linux-x86_64-cpython-314/src/greenlet/greenlet.o
+             In file included from src/greenlet/greenlet_greenlet.hpp:26,
+                              from src/greenlet/greenlet_internal.hpp:20,
+                              from src/greenlet/greenlet.cpp:19:
+             /app/.heroku/python/include/python3.14/internal/pycore_frame.h:12:4: error: #error "this header requires Py_BUILD_CORE define"
+                12 | #  error "this header requires Py_BUILD_CORE define"
+                   |    ^~~~~
+             In file included from /app/.heroku/python/include/python3.14/internal/pycore_frame.h:15:
+             /app/.heroku/python/include/python3.14/internal/pycore_typedefs.h:5:4: error: #error "this header requires Py_BUILD_CORE define"
+                 5 | #  error "this header requires Py_BUILD_CORE define"
+                   |    ^~~~~
+             src/greenlet/greenlet_greenlet.hpp:104:9: error: ‘_PyCFrame’ does not name a type; did you mean ‘_frame’?
+               104 |         _PyCFrame* cframe;
+                   |         ^~~~~~~~~
+                   |         _frame
+             src/greenlet/greenlet_greenlet.hpp:147:29: error: ‘_PyCFrame’ has not been declared
+               147 |         void set_new_cframe(_PyCFrame& frame) noexcept;
+                   |                             ^~~~~~~~~
+             In file included from src/greenlet/greenlet.cpp:31:
+             src/greenlet/TGreenlet.cpp: In member function ‘void greenlet::Greenlet::expose_frames()’:
+             src/greenlet/TGreenlet.cpp:623:29: error: aggregate ‘_PyInterpreterFrame iframe_copy’ has incomplete type and cannot be defined
+               623 |         _PyInterpreterFrame iframe_copy;
+                   |                             ^~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:624:65: error: invalid application of ‘sizeof’ to incomplete type ‘_PyInterpreterFrame’
+               624 |         this->stack_state.copy_from_stack(&iframe_copy, iframe, sizeof(*iframe));
+                   |                                                                 ^~~~~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:625:14: error: ‘_PyFrame_IsIncomplete’ was not declared in this scope
+               625 |         if (!_PyFrame_IsIncomplete(&iframe_copy)) {
+                   |              ^~~~~~~~~~~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:651:24: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               651 |             if (!iframe->frame_obj) {
+                   |                        ^~
+             In file included from /app/.heroku/python/include/python3.14/pyframe.h:19,
+                              from /app/.heroku/python/include/python3.14/Python.h:113,
+                              from src/greenlet/greenlet.cpp:16:
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:653:37: error: aggregate ‘_PyInterpreterFrame dummy_iframe’ has incomplete type and cannot be defined
+               653 |                 _PyInterpreterFrame dummy_iframe;
+                   |                                     ^~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:658:38: error: ‘FRAME_OWNED_BY_GENERATOR’ was not declared in this scope
+               658 |                 dummy_iframe.owner = FRAME_OWNED_BY_GENERATOR;
+                   |                                      ^~~~~~~~~~~~~~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:683:45: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               683 |                 memcpy(&last_complete_iframe->frame_obj->_f_frame_data[0],
+                   |                                             ^~
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:684:45: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               684 |                        &last_complete_iframe->previous, sizeof(void *));
+                   |                                             ^~
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:685:37: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               685 |                 last_complete_iframe->previous = iframe;
+                   |                                     ^~
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:702:37: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               702 |         memcpy(&last_complete_iframe->frame_obj->_f_frame_data[0],
+                   |                                     ^~
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:703:37: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               703 |                &last_complete_iframe->previous, sizeof(void *));
+                   |                                     ^~
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             src/greenlet/TGreenlet.cpp:704:29: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               704 |         last_complete_iframe->previous = nullptr;
+                   |                             ^~
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             In file included from src/greenlet/greenlet.cpp:33:
+             src/greenlet/TUserGreenlet.cpp: In member function ‘virtual greenlet::Greenlet::switchstack_result_t greenlet::UserGreenlet::g_initialstub(void*)’:
+             src/greenlet/TUserGreenlet.cpp:280:5: error: ‘_PyCFrame’ was not declared in this scope; did you mean ‘_frame’?
+               280 |     _PyCFrame trace_info;
+                   |     ^~~~~~~~~
+                   |     _frame
+             src/greenlet/TUserGreenlet.cpp:282:39: error: ‘trace_info’ was not declared in this scope
+               282 |     this->python_state.set_new_cframe(trace_info);
+                   |                                       ^~~~~~~~~~
+             In file included from src/greenlet/greenlet.cpp:36:
+             src/greenlet/TPythonState.cpp: In constructor ‘greenlet::PythonState::PythonState()’:
+             src/greenlet/TPythonState.cpp:12:6: error: class ‘greenlet::PythonState’ does not have any field named ‘cframe’
+                12 |     ,cframe(nullptr)
+                   |      ^~~~~~
+             src/greenlet/TPythonState.cpp:79:11: error: ‘class greenlet::PythonState’ has no member named ‘cframe’
+                79 |     this->cframe = &PyThreadState_GET()->root_cframe;
+                   |           ^~~~~~
+             src/greenlet/TPythonState.cpp:79:42: error: ‘PyThreadState’ {aka ‘struct _ts’} has no member named ‘root_cframe’
+                79 |     this->cframe = &PyThreadState_GET()->root_cframe;
+                   |                                          ^~~~~~~~~~~
+             src/greenlet/TPythonState.cpp: In member function ‘void greenlet::PythonState::operator<<(const PyThreadState*)’:
+             src/greenlet/TPythonState.cpp:125:11: error: ‘class greenlet::PythonState’ has no member named ‘cframe’
+               125 |     this->cframe = tstate->cframe;
+                   |           ^~~~~~
+             src/greenlet/TPythonState.cpp:125:28: error: ‘const PyThreadState’ {aka ‘const struct _ts’} has no member named ‘cframe’
+               125 |     this->cframe = tstate->cframe;
+                   |                            ^~~~~~
+             src/greenlet/TPythonState.cpp:133:31: error: ‘C_RECURSION_LIMIT’ was not declared in this scope
+               133 |     this->c_recursion_depth = C_RECURSION_LIMIT - tstate->c_recursion_remaining;
+                   |                               ^~~~~~~~~~~~~~~~~
+             src/greenlet/TPythonState.cpp:133:59: error: ‘const PyThreadState’ {aka ‘const struct _ts’} has no member named ‘c_recursion_remaining’; did you mean ‘py_recursion_remaining’?
+               133 |     this->c_recursion_depth = C_RECURSION_LIMIT - tstate->c_recursion_remaining;
+                   |                                                           ^~~~~~~~~~~~~~~~~~~~~
+                   |                                                           py_recursion_remaining
+             src/greenlet/TPythonState.cpp:137:35: error: ‘const PyThreadState’ {aka ‘const struct _ts’} has no member named ‘cframe’
+               137 |     this->current_frame = tstate->cframe->current_frame;
+                   |                                   ^~~~~~
+             src/greenlet/TPythonState.cpp:147:42: error: ‘const PyThreadState’ {aka ‘const struct _ts’} has no member named ‘trash’
+               147 |     this->trash_delete_nesting = tstate->trash.delete_nesting;
+                   |                                          ^~~~~
+             src/greenlet/TPythonState.cpp: In member function ‘void greenlet::PythonState::unexpose_frames()’:
+             src/greenlet/TPythonState.cpp:169:51: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               169 |         _PyInterpreterFrame *prev_exposed = iframe->previous;
+                   |                                                   ^~
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             src/greenlet/TPythonState.cpp:171:23: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               171 |         memcpy(&iframe->previous, &iframe->frame_obj->_f_frame_data[0],
+                   |                       ^~
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             src/greenlet/TPythonState.cpp:171:42: error: invalid use of incomplete type ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+               171 |         memcpy(&iframe->previous, &iframe->frame_obj->_f_frame_data[0],
+                   |                                          ^~
+             /app/.heroku/python/include/python3.14/cpython/pyframe.h:25:8: note: forward declaration of ‘_PyInterpreterFrame’ {aka ‘struct _PyInterpreterFrame’}
+                25 | struct _PyInterpreterFrame;
+                   |        ^~~~~~~~~~~~~~~~~~~
+             src/greenlet/TPythonState.cpp: In member function ‘void greenlet::PythonState::operator>>(PyThreadState*)’:
+             src/greenlet/TPythonState.cpp:188:13: error: ‘PyThreadState’ {aka ‘struct _ts’} has no member named ‘cframe’
+               188 |     tstate->cframe = this->cframe;
+                   |             ^~~~~~
+             src/greenlet/TPythonState.cpp:188:28: error: ‘class greenlet::PythonState’ has no member named ‘cframe’
+               188 |     tstate->cframe = this->cframe;
+                   |                            ^~~~~~
+             src/greenlet/TPythonState.cpp:202:13: error: ‘PyThreadState’ {aka ‘struct _ts’} has no member named ‘c_recursion_remaining’; did you mean ‘py_recursion_remaining’?
+               202 |     tstate->c_recursion_remaining = C_RECURSION_LIMIT - this->c_recursion_depth;
+                   |             ^~~~~~~~~~~~~~~~~~~~~
+                   |             py_recursion_remaining
+             src/greenlet/TPythonState.cpp:202:37: error: ‘C_RECURSION_LIMIT’ was not declared in this scope
+               202 |     tstate->c_recursion_remaining = C_RECURSION_LIMIT - this->c_recursion_depth;
+                   |                                     ^~~~~~~~~~~~~~~~~
+             src/greenlet/TPythonState.cpp:207:13: error: ‘PyThreadState’ {aka ‘struct _ts’} has no member named ‘cframe’
+               207 |     tstate->cframe->current_frame = this->current_frame;
+                   |             ^~~~~~
+             src/greenlet/TPythonState.cpp:213:13: error: ‘PyThreadState’ {aka ‘struct _ts’} has no member named ‘trash’
+               213 |     tstate->trash.delete_nesting = this->trash_delete_nesting;
+                   |             ^~~~~
+             src/greenlet/TPythonState.cpp: At global scope:
+             src/greenlet/TPythonState.cpp:273:6: error: variable or field ‘set_new_cframe’ declared void
+               273 | void PythonState::set_new_cframe(_PyCFrame& frame) noexcept
+                   |      ^~~~~~~~~~~
+             src/greenlet/TPythonState.cpp:273:34: error: ‘_PyCFrame’ was not declared in this scope; did you mean ‘_frame’?
+               273 | void PythonState::set_new_cframe(_PyCFrame& frame) noexcept
+                   |                                  ^~~~~~~~~
+                   |                                  _frame
+             src/greenlet/TPythonState.cpp:273:45: error: ‘frame’ was not declared in this scope; did you mean ‘_frame’?
+               273 | void PythonState::set_new_cframe(_PyCFrame& frame) noexcept
+                   |                                             ^~~~~
+                   |                                             _frame
+             src/greenlet/greenlet.cpp: In function ‘PyObject* mod_get_tstate_trash_delete_nesting(PyObject*)’:
+             src/greenlet/greenlet.cpp:1341:36: error: ‘PyThreadState’ {aka ‘struct _ts’} has no member named ‘trash’
+              1341 |     return PyLong_FromLong(tstate->trash.delete_nesting);
+                   |                                    ^~~~~
+             error: command '/usr/bin/g++' failed with exit code 1
+             [end of output]
+         
+         note: This error originates from a subprocess, and is likely not a problem with pip.
+         ERROR: Failed building wheel for greenlet
+       Failed to build greenlet
+       error: failed-wheel-build-for-install
+       
+       × Failed to build installable wheels for some pyproject.toml based projects
+       ╰─> greenlet
+ !     Error: Unable to install dependencies using pip.
+ !     
+ !     See the log output above for more information.
+ !     Push rejected, failed to compile Python app.
+ !     Push failed
